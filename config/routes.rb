@@ -53,4 +53,8 @@ Muzakracy::Application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
+    
+    root 'playlist#index'
+    get 'playlist/:id' => 'playlist#show"
+    resources :playlists
 end
