@@ -1,0 +1,14 @@
+<div id = "request-bar">
+    <%= form_tag do %>
+        <%= label_tag(:q, "add song")%> 
+        <%= text_field_tag(:q)%> 
+        <%= hidden_field_tag :playlist, @playlist %>
+        <%= submit_tag"Make"%>
+    <%end%>
+</div>
+
+<div id = "queue">
+</div>
+
+
+

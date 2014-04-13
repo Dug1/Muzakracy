@@ -1,0 +1,19 @@
+<div id="error bar">
+    <%= flash[:alert].join("\n") if flash[:alert] %>
+</div>
+
+<p>
+    Create a new playlist
+    <%= form_tag(playlist_path, method:"post") do%>
+        <%= label_tag :name, "Name" %>
+        <%= text_area_tag :name %>
+        <%= hidden_field_tag :user_id , "12341" %>
+        <%= submit_tag "Go"%>
+    <% end %>
+</p>
+
+<% @playlists.each do |playlist|%>
+    <p>
+        <%= link_to playlist.name, playlist_path(playlist) %>
+    </p>
+<% end %>
