@@ -3,15 +3,15 @@ R.ready(function() {
 });
 var displayResults = function(results){
     for(var i = 0; i < results.length; i++){
-       var result = '<div class="search-result"><p>' +
+       var result = '<div class="search-result">' +
             '<div class="search-icon">' + 
-                '<a href="' + results[i].shortUrl + '" target="a"><img src="' + results[i].icon + '"></a>' + '</div>' +
+            '<a href="' + results[i].shortUrl + '" target="a"><img src="' + results[i].icon + '" class="album-thumb"></a>' + '</div>' +
             '<div class ="search-text"><ul>' +
                 '<li>Title: ' + results[i].name + '</li>' +
                 '<li>Artist: ' + results[i].artist + '</li>' + 
                 '<li>Album: ' + results[i].album + '</li>' +
-            '</ul></div></p>' +
-        '</div><br>';
+            '</ul></div>' +
+        '</div><br />';
         $('#search-results').prepend(result);
     }
 }

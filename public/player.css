@@ -1,0 +1,28 @@
+#search-results{
+	width:100%;
+}
+
+.search-result
+{
+	clear:both;
+}
+.search-icon
+{
+    position:relative;
+	float:left;
+	clear:left;
+	margin-right:10px;
+}
+.album-thumb
+{
+	width:70px;
+	height:70px;
+}
+.search-text
+{
+    list-style-type: none;
+}
+.search-text li
+{
+	list-style-type:none;
+}
