@@ -58,7 +58,7 @@ Muzakracy::Application.routes.draw do
     get 'playlist/:id' => 'playlist#show'
     post 'playlist' => 'playlist#create'
     delete 'playlist/:id' => 'playlist#destroy'
-    post 'playlist/:id/song/:song_id' => 'track#create'
-    put 'playlist/:id/song/:song_id' => 'track#vote'
-    delete 'playlist/:id/song/:song_id' => 'track#destroy'
+    post 'song' => 'track#create'
+    put 'song/:song_id' => 'track#vote'
+    delete 'song/:song_id' => 'track#destroy'
 end

@@ -1,13 +1,17 @@
 <div id = "request-bar">
-    <%= form_tag do %>
+    <%= form_tag("/song") do %>
         <%= label_tag(:q, "add song")%> 
         <%= text_field_tag(:q)%> 
-        <%= hidden_field_tag :playlist, @playlist %>
-        <%= submit_tag"Make"%>
+        <%= hidden_field_tag :id, @playlist.id %>
+        <%= hidden_field_tag :song_id, "12314151ad"%>
+        <%= submit_tag "Make" %>
     <%end%>
 </div>
 
 <div id = "queue">
+    <% @queue.each do |song| %>
+        <%= song.name %>
+    <% end %>
 </div>
 
 
