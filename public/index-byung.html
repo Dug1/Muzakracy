@@ -1,0 +1,29 @@
+<html> 
+
+<head>
+	<title>Muzakracy Web Player</title>
+	<script src="https://www.rdio.com/api/api.js?client_id=1Tla-CSSgTedjH5CTfUqsg"></script>
+	<script src="http://code.jquery.com/jquery-2.1.0.js"></script>
+    <!--Bootstrap-->
+     <script src="bootstrap/js/bootstrap.min.js"></script>
+      <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <!--Not Bootstrap-->
+	<script src="hoodoo.js"></script>
+	<link rel="stylesheet" href="./player.css">
+</head>
+
+<body>
+    <div class ="navbar navbar-static-top">
+        <form class="navbar-form pull-left">
+            <input type="text" class="span2" id = "search-query" placeholder="Suggest a Song">
+            <button type="submit" class="btn" id="submit-search">Search</button>
+        </form>
+    </div>
+
+	<div id="search-results" class="modal hide fade" tabindex="-1" role="dialog" aria-labeledby="Search Results:"aria-hidden="true">
+        <div class="modal-body">
+        </div>
+	</div>
+
+</body>
+</html>
