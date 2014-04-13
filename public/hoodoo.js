@@ -3,22 +3,28 @@ R.ready(function() {
 });
 var displayResults = function(results){
     for(var i = 0; i < results.length; i++){
-       var result = '<div class="search-result">' +
-            '<div class="search-icon">' + 
-            '<a href="' + results[i].shortUrl + '" target="a"><img src="' + results[i].icon + '" class="album-thumb"></a>' + '</div>' +
+       var result = '<div class="search-result" id = search-result>' +
+            '<div class="search-icon" id="search-icon' + i + '">' + 
+            '<a href="#"><img src="' + results[i].icon + '" class="album-thumb"></a>' + '</div>' +
             '<div class ="search-text"><ul>' +
                 '<li>Title: ' + results[i].name + '</li>' +
                 '<li>Artist: ' + results[i].artist + '</li>' + 
                 '<li>Album: ' + results[i].album + '</li>' +
             '</ul></div>' +
-        '</div><br />';
-        $('#search-results').prepend(result);
+            '<script>' +
+                '$("#search-icon' + i + '").click(function(){' +
+                    'R.player.play({source: "' + results[i].key +'"});' +
+                    '$(".search-result").remove();'+
+                    '$("#search-results").modal(\'hide\');' +
+                '});' +
+            '</script>' + '<br /></div>' ;
+        $('.modal-body').append(result);
     }
 }
-$(function(){
-    $("#play").click(function() {R.player.togglePause();});
-    
+
+$(function(){    
     $("#submit-search").click(function(){
+        $(".search-result").remove();
         R.request(
             //Search
             {
@@ -30,6 +36,7 @@ $(function(){
                 success: function(response){
                     $("#search-query").val("");
                     displayResults(response.result.results);
+                    $("#search-results").modal('show');
                 },
                 error: function(response){
                     console.log(response.message);
