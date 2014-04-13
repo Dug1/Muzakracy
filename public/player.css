@@ -1,3 +1,8 @@
+body
+{
+	font-family:Verdana, Geneva, sans-serif;
+}
+
 #search-results{
 	width:100%;
 }
@@ -11,7 +16,6 @@
     position:relative;
 	float:left;
 	clear:left;
-	margin-right:10px;
 }
 .album-thumb
 {
@@ -21,6 +25,10 @@
 .search-text
 {
     list-style-type: none;
+	font-size:80%;
+	display:inline-block;
+	vertical-align:middle;
+	margin-left:-2px;
 }
 .search-text li
 {
